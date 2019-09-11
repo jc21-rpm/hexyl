@@ -1,0 +1,7 @@
+{
+  "publish": {
+    "PACKAGE": "hexyl",
+    "GH_USER": "jc21-rpm",
+    "VERSION": "0.5.1"
+  }
+}
