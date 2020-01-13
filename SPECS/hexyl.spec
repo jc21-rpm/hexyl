@@ -7,8 +7,9 @@ Summary:        hexyl is a simple hex viewer for the terminal.
 Group:          Applications/System
 License:        GPLv2
 URL:            https://github.com/sharkdp/%{name}
-BuildRequires:  cmake, libgit2, openssl-devel
-%{?el7:BuildRequires: cargo, rust}
+BuildRequires:  cmake
+BuildRequires:  cargo, rust
+Source:         https://github.com/sharkdp/%{name}/archive/v%{version}.tar.gz
 
 %description
 hexyl is a simple hex viewer for the terminal. It uses a colored output to distinguish
@@ -17,19 +18,17 @@ characters, other ASCII characters and non-ASCII).
 
 
 %prep
-wget https://github.com/sharkdp/%{name}/archive/v%{version}.tar.gz
-tar xzf v%{version}.tar.gz
+%setup -q -n %{name}-%{version}
 
 
 %build
-cd %{name}-%{version}
 cargo build --release
 
 
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/bin
-cp %{name}-%{version}/target/release/hexyl %{buildroot}/usr/bin/
+cp target/release/hexyl %{buildroot}/usr/bin/
 
 
 %clean
@@ -38,7 +37,7 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
-%doc %{name}-%{version}/LICENSE* %{name}-%{version}/*.md
+%doc LICENSE* *.md
 /usr/bin/hexyl
 
 
