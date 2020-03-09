@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:           hexyl
-Version:        0.6.0
+Version:        0.7.0
 Release:        1%{?dist}
 Summary:        hexyl is a simple hex viewer for the terminal.
 Group:          Applications/System
@@ -16,32 +16,29 @@ hexyl is a simple hex viewer for the terminal. It uses a colored output to disti
 different categories of bytes (NULL bytes, printable ASCII characters, ASCII whitespace
 characters, other ASCII characters and non-ASCII).
 
-
 %prep
 %setup -q -n %{name}-%{version}
 
-
 %build
 cargo build --release
-
 
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/bin
 cp target/release/hexyl %{buildroot}/usr/bin/
 
-
 %clean
 rm -rf %{buildroot}
-
 
 %files
 %defattr(-,root,root,-)
 %doc LICENSE* *.md
 /usr/bin/hexyl
 
-
 %changelog
+* Tue Mar 10 2020 Jamie Curnow <jc@jc21.com> - 0.7.0-1
+- v0.7.0
+
 * Wed Oct 9 2019 Jamie Curnow <jc@jc21.com> - 0.6.0-1
 - v0.6.0
 
