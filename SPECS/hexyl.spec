@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:           hexyl
-Version:        0.7.0
+Version:        0.8.0
 Release:        1%{?dist}
 Summary:        hexyl is a simple hex viewer for the terminal.
 Group:          Applications/System
@@ -36,6 +36,9 @@ rm -rf %{buildroot}
 /usr/bin/hexyl
 
 %changelog
+* Mon Jun 8 2020 Jamie Curnow <jc@jc21.com> - 0.8.0-1
+- v0.8.0
+
 * Tue Mar 10 2020 Jamie Curnow <jc@jc21.com> - 0.7.0-1
 - v0.7.0
 
