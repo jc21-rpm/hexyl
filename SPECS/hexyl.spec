@@ -2,7 +2,7 @@
 
 Name:           hexyl
 Version:        0.10.0
-Release:        1%{?dist}
+Release:        1
 Summary:        hexyl is a simple hex viewer for the terminal.
 Group:          Applications/System
 License:        GPLv2
