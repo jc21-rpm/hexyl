@@ -1,8 +1,8 @@
 %global debug_package %{nil}
 
 Name:           hexyl
-Version:        0.13.1
-Release:        1
+Version:        0.14.0
+Release:        1%{?dist}
 Summary:        hexyl is a simple hex viewer for the terminal.
 Group:          Applications/System
 License:        GPLv2
@@ -36,6 +36,9 @@ rm -rf %{buildroot}
 /usr/bin/hexyl
 
 %changelog
+* Tue Jun 25 2024 Jamie Curnow <jc@jc21.com> - 0.14.0-1
+- v0.14.0
+
 * Thu Jul 27 2023 Jamie Curnow <jc@jc21.com> - 0.13.1-1
 - v0.13.1
 
